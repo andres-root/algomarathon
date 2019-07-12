@@ -27,7 +27,6 @@ def karatsuba(a, b):
 
         return (z2 * 10 ^ (m2 * 2)) + ((z1 - z2 - z0) * 10 ^ m2) + z0
     """
-
     if a < 10 or b < 10:
         return a*b
     
@@ -40,8 +39,6 @@ def karatsuba(a, b):
     a_high, a_low = int(a[:m2]), int(a[m2:])
     b_high, b_low = int(b[:m2]), int(b[m2:])
 
-    print(a_high, a_low)
-
     z0 = karatsuba(a_low, b_low)
     z1 = karatsuba((a_low + a_high), (b_low + b_high))
     z2 = karatsuba(a_high, b_high)
@@ -49,6 +46,8 @@ def karatsuba(a, b):
     return (z2 * 10 ^ (m2 * 2)) + ((z1 - z2 - z0) * 10 ^ m2) + z0
 
 if __name__ == '__main__':
-    result = karatsuba(3141592653589793238462643383279502884197169399375105820974944592, 2718281828459045235360287471352662497757247093699959574966967627)
-    print(result)
+    a = 3141592653589793238462643383279502884197169399375105820974944592
+    b = 2718281828459045235360287471352662497757247093699959574966967627
+    result = karatsuba(a, b)
+    print(result, a*b)
     
