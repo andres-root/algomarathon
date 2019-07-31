@@ -4,11 +4,14 @@
 def even(n):
     return (n % 2 == 0)
 
+def test(numbers):
+    for n in numbers:
+        if even(n):
+            print(n, 'even')
+        else:
+            print(n, 'odd')
+
 
 if __name__ == '__main__':
-    is_evan = even(n)
-
-    if is_even:
-        print('even')
-    else:
-        print('odd')
+    numbers = [x for x in range(1, 11)]
+    test(numbers)
