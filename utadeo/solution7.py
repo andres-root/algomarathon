@@ -1,23 +1,28 @@
 #!/usr/bin/env python3
 
+series = []
 
-def fibonacci(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+def fibonacci(n, mem={}):
+    if n in mem.keys():
+        return mem[n]
+
+    if n == 1 or n == 2:
+        fib = 1
+    else:
+        fib = fibonacci(n - 1) + fibonacci(n - 2)
     
-    fib = fibonacci(n - 1) + fibonacci(n - 2)
-    arr.append(fib)
-    
+    mem[n] = fib
+    series.append(fib)
+
     return fib
 
 def test(test_cases):
     results = []
 
     for n in test_cases:
-        results.append(fibonacci(n))
-    
+        fibonacci(n)
+        results.append(series)
+
     return results
 
 
