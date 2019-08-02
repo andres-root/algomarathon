@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
 
 
-def fibonacci(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    
-    fib = fibonacci(n - 1) + fibonacci(n - 2)
-    arr.append(fib)
-    
-    return fib
+def reverse(s):
+    if len(s) == 0:
+        return ''
+    else:
+        return '{0}{1}'.format(reverse(s[1:]), s[0])
 
 def test(test_cases):
     results = []
 
     for n in test_cases:
-        results.append(fibonacci(n))
+        results.append(
+            '{0}lol'.format(reverse(n))
+        )
     
     return results
 
 
 if __name__ == '__main__':
-    test_cases = [10]
+    test_cases = ['arepa', 'utadeo']
     print(list(zip(test_cases, test(test_cases))))
