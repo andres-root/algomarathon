@@ -12,7 +12,7 @@ def pat(pattern, words):
     result = []
 
     for i in range(len(pattern)):
-        if pattern[i] not in ht.keys():
+        if pattern[i] not in ht.keys() and string[i]:
             ht[pattern[i]] = string[i]
 
         result.append(ht[pattern[i]])
@@ -21,7 +21,7 @@ def pat(pattern, words):
 
 
 if __name__ == '__main__':
-    string = 'felipe felipe luis luis felipe'
+    string = 'felipe luis luis felipe carlos'
     pattern = 'abbac'
 
     result = pat(pattern, string)
