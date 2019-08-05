@@ -9,6 +9,7 @@ def coin_change(cents):
     available_coins = {
         25: 25,
         10: 10,
+        5: 5,
         1: 1,
     }
     
@@ -18,8 +19,10 @@ def coin_change(cents):
     i = 0
     coins = []
     arr = list(available_coins.keys())
-
+    c = 0
     while i <= len(arr) - 1:
+        c += 1
+        print(c)
         coin = arr[i]
 
         if cents == 0:
@@ -30,7 +33,6 @@ def coin_change(cents):
             coins.append(coin)
         else:
             i += 1
-    print(i)
     return coins
         
 change = coin_change(31)
