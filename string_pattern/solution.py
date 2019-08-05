@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 
 
-def pat(pattern, string):
+def pat(pattern, words):
     pattern = list(pattern)
-    string = string.split()
+    string = words.split()
 
-    if len(string) != len(pattern):
+    if len(string) != len(pattern) or words.strip()  == '':
         return False
 
     ht = {}
     result = []
 
     for i in range(len(pattern)):
-        if pattern[i] not in po.keys():
+        if pattern[i] not in ht.keys():
             ht[pattern[i]] = string[i]
 
         result.append(ht[pattern[i]])
-    print(result)
+
     return (result == string)
 
 if __name__ == '__main__':
     string = 'felipe luis luis felipe'
-    pattern = 'abbab'
+    pattern = 'abba'
 
     result = pat(pattern, string)
 
