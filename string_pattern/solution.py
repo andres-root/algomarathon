@@ -21,8 +21,8 @@ def pat(pattern, words):
 
 
 if __name__ == '__main__':
-    string = 'felipe luis luis felipe'
-    pattern = 'abba'
+    string = 'felipe luis carlos luis felipe'
+    pattern = 'abbac'
 
     result = pat(pattern, string)
 
