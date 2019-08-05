@@ -16,12 +16,12 @@ def pat(pattern, words):
             ht[pattern[i]] = string[i]
 
         result.append(ht[pattern[i]])
-
+    print(ht, result)
     return (result == string)
 
 
 if __name__ == '__main__':
-    string = 'felipe luis carlos luis felipe'
+    string = 'felipe felipe luis luis felipe'
     pattern = 'abbac'
 
     result = pat(pattern, string)
