@@ -19,6 +19,7 @@ def pat(pattern, words):
 
     return (result == string)
 
+
 if __name__ == '__main__':
     string = 'felipe luis luis felipe'
     pattern = 'abba'
