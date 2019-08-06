@@ -2,7 +2,7 @@
 
 
 
-def coin_change_old(cents):
+def coin_change_first(cents):
     if cents < 1:
         return 0
     
@@ -36,23 +36,32 @@ def coin_change_old(cents):
 
     return coins
 
-def coin_change(cents):
-    if cents < 1:
+def coin_change(target):
+    if target < 1:
         return 0
 
+    solutions = []
     coins = [25, 10, 5, 1]
-    num_of_coins = 0
-    cash = []
+    i = 0
 
-    for coin in coins:
-        num_of_coins += cents // coin
-        cents = cents % coin
-        cash.append(coin)
+    while i <= len(coins) - 1:
+        num_of_coins = 0
+        cents = target
 
-        if cents == 0:
-            break
+        for j in range(i, len(coins) + 1):
+            coin = coins[j]
+            num_of_coins += cents // coin
+            cents = cents % coin
+
+            if len(solutions) > 0 and num_of_coins >= solutions[len(solutions) - 1]:
+                break
+
+            if cents == 0:
+                solutions.append(num_of_coins)
+                break
+        i += 1
     
-    return cash, num_of_coins
+    return min(solutions)
         
 change = coin_change(31)
 print(change)
