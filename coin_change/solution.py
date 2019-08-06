@@ -41,7 +41,7 @@ def coin_change(target):
         return 0
 
     solutions = []
-    coins = [25, 10, 5, 1]
+    coins = [25, 10, 1]
     i = 0
 
     while i <= len(coins) - 1:
@@ -63,5 +63,5 @@ def coin_change(target):
     
     return min(solutions)
         
-change = coin_change(31)
+change = coin_change(70)
 print(change)
