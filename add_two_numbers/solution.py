@@ -17,7 +17,10 @@ def get_number(node):
 
 
 def add(node1, node2):
-    pass    
+    number1 = get_number(node2)
+    number2 = get_number(node2)
+    
+    print(number1, number2)    
 
 
 if __name__ == '__main__':
@@ -34,8 +37,13 @@ if __name__ == '__main__':
         if (mem1 and mem2):
             mem1.next = node1
             mem2.next = node2
+        else:
+            first1 = node1
+            first2 = node2
         
         mem1 = node1
         mem2 = node2
     
-    print(add(l1, l2))
+    
+    
+    print(add(first1, first2))
