@@ -20,14 +20,14 @@ def read_file(path):
 def read_ops(path):
     squares = []
 
-    with open(path) as numbers_file, open('./data/ops_result.txt', 'w+') as squares_file:
-        lines = numbers_file.readlines()
+    with open(path) as ops_file, open('./data/ops_result.txt', 'w+') as results_file:
+        lines = ops_file.readlines()
         
         for line in lines:
             s = line.replace('\n', '')
             op = eval(s)
             r = '{0} = {1}\n'.format(s, op)
-            squares_file.write(r)
+            results_file.write(r)
     return squares
 
 
