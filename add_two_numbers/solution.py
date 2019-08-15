@@ -10,18 +10,39 @@ def get_number(node):
     number = ''
 
     while node:
-        number += node.val
+        number += str(node.val)
         node = node.next
     
-    return number
+    return int(number[::-1])
+
+
+def create_linked_list(number):
+    mem = None
+    first = None
+
+    for n in number:
+        print(n)
+        node = Node(int(n))
+
+        if mem:
+            mem.next = node
+        else:
+            first = node
+        
+        mem = node
+    
+    return first
 
 
 def add(node1, node2):
-    number1 = get_number(node2)
+    number1 = get_number(node1)
     number2 = get_number(node2)
     
-    print(number1, number2)    
+    result = str(number1 + number2)
 
+    result_node = create_linked_list(result)
+
+    return result_node
 
 if __name__ == '__main__':
     l1 = [2, 4, 3]
