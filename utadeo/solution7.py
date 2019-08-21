@@ -27,5 +27,5 @@ def test(test_cases):
 
 
 if __name__ == '__main__':
-    test_cases = [10]
+    test_cases = [100]
     print(list(zip(test_cases, test(test_cases))))
